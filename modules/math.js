@@ -1,5 +1,5 @@
 function round(number) {
-  return Math.round(number*100 + Number.EPSILON) / 100;
+  return Math.round((number + Number.EPSILON) * 100) / 100;
 }
 
 module.exports = { round };

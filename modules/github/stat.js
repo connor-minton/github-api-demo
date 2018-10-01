@@ -22,6 +22,4 @@ function userEventsAvg(userEvents) {
   return _.sum(data) / userEvents.length;
 }
 
-module.exports = {
-  userEventsAvg
-};
+module.exports = { userEventsAvg };

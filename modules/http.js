@@ -17,4 +17,4 @@ function httpRequest(url, options) {
   });
 }
 
-module.exports = httpRequest;
+module.exports = { request: httpRequest };

@@ -5,4 +5,4 @@ function getUserEvents(user) {
   return request(url, { json: true });
 }
 
-module.exports = getUserEvents;
+module.exports = { getUserEvents };

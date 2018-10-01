@@ -1,15 +1,15 @@
-const { getUserEvents } = require('./modules/github-service');
-const userEventsAvg = require('./modules/stats').avg.userEventsAvg;
+#!/usr/bin/env node
 
-const USAGE = 'usage: github-avg username';
+const github = require('./modules/github');
+const getUserEvents = github.api.getUserEvents;
+const userEventsAvg = github.stat.userEventsAvg;
+const round = require('./modules/math').round;
+
+const USAGE = 'usage: github-api-demo.js username';
 
 function exitError(msg) {
   console.error(msg);
   process.exit(1);
-}
-
-function round(number) {
-  return Math.round(number*100 + Number.EPSILON) / 100;
 }
 
 const args = process.argv.slice(2);

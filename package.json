@@ -2,7 +2,7 @@
   "name": "github-api-demo",
   "version": "0.0.1",
   "description": "a simple demonstration of GitHub's public API",
-  "main": "index.js",
+  "main": "github-api-demo.js",
   "scripts": {
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1",

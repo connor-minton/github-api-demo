@@ -1,3 +1,3 @@
-const weightedAvg = require('./weighted-avg');
+const avg = require('./avg');
 
-module.exports = { weightedAvg };
+module.exports = { avg };

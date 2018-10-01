@@ -8,6 +8,10 @@ function exitError(msg) {
   process.exit(1);
 }
 
+function round(number) {
+  return Math.round(number*100 + Number.EPSILON) / 100;
+}
+
 const args = process.argv.slice(2);
 if (args.length !== 1)
   exitError(USAGE);
@@ -18,7 +22,7 @@ getUserEvents(username)
   .then(response => {
     if (response.length === 0)
       exitError('User has no events');
-    console.log(userEventsAvg(response));
+    console.log(round(userEventsAvg(response)));
   }, error => {
     exitError('error: could not fetch data from GitHub: ' + error);
   })

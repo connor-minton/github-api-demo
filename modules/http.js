@@ -11,8 +11,10 @@ function httpRequest(url, options) {
     }, options);
 
     request(requestParams, (error, response, body) => {
-      if (error) reject(error);
-      else resolve(body);
+      if (error)
+        reject(error);
+      else
+        resolve({ response, body });
     });
   });
 }

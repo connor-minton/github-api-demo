@@ -2,7 +2,7 @@ const assert = require('assert');
 const math = require('../../modules/math');
 
 describe('math', () => {
-  describe('.round', () => {
+  describe('.round()', () => {
     it('should round 1.005 to 1.01', () => {
       assert.strictEqual(math.round(1.005).toString(), '1.01');
     });

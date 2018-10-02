@@ -8,7 +8,7 @@ const eventWeights = {
 };
 
 describe('github.stat', () => {
-  describe('.userEventsAvg', () => {
+  describe('.userEventsAvg()', () => {
     it('should throw when passed an empty array', () => {
       assert.throws(() => {
         stat.userEventsAvg([]);

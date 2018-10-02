@@ -2,6 +2,8 @@ const request = module.require('request');
 
 // Promise-enabled adapter for `request`
 function httpRequest(url, options) {
+  options = options || {};
+
   return new Promise((resolve, reject) => {
     const requestParams = Object.assign({
       url,

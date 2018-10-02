@@ -14,13 +14,11 @@ describe('http', () => {
         .get('/users/connor')
         .reply(200, response);
 
-      const promise = http.request('https://api.example.com/users/connor')
+      return http.request('https://api.example.com/users/connor')
         .then(result => {
           assert.strictEqual(result.response.statusCode, 200);
           assert.strictEqual(result.body, response);
         });
-
-      return promise;
     });
 
     it('should support JSON option', () => {
@@ -30,13 +28,11 @@ describe('http', () => {
         .get('/users/connor')
         .reply(200, JSON.parse(response));
 
-      const promise = http.request('https://api.example.com/users/connor', { json: true })
+      return http.request('https://api.example.com/users/connor', { json: true })
         .then(result => {
           assert.strictEqual(result.response.statusCode, 200);
           assert.deepStrictEqual(result.body, JSON.parse(response));
         });
-
-      return promise;
     });
 
     it('should resolve with server response on 404', () => {
@@ -46,13 +42,11 @@ describe('http', () => {
         .get('/users/connor')
         .reply(404, JSON.parse(response));
 
-      const promise = http.request('https://api.example.com/users/connor', { json: true })
+      return http.request('https://api.example.com/users/connor', { json: true })
         .then(result => {
           assert.strictEqual(result.response.statusCode, 404);
           assert.strictEqual(result.body.message, 'not found');
         });
-
-      return promise;
     });
   });
 });

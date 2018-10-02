@@ -1,5 +1,5 @@
 const assert = require('assert');
-const math = require('../../modules/math');
+const math = require('../../lib/math');
 
 describe('math', () => {
   describe('.round()', () => {

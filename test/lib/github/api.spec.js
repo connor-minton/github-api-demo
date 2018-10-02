@@ -1,7 +1,7 @@
 const nock = require('nock');
 const assert = require('assert');
 const config = require('config');
-const api = require('../../../modules/github/api');
+const api = require('../../../lib/github/api');
 
 const githubUrl = config.get('githubApiBaseUrl');
 

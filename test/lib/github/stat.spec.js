@@ -1,6 +1,6 @@
 const assert = require('assert');
 const config = require('config');
-const stat = require('../../../modules/github/stat');
+const stat = require('../../../lib/github/stat');
 
 const eventWeights = config.get('eventWeights');
 

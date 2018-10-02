@@ -1,6 +1,6 @@
 const assert = require('assert');
 const nock = require('nock');
-const http = require('../../modules/http');
+const http = require('../../lib/http');
 
 describe('http', () => {
   describe('.request()', () => {

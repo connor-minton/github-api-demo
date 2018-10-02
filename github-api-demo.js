@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const Script = require('./modules/script');
+const Script = require('./lib/script');
 
 (new Script()).main(process.argv);

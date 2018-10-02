@@ -11,7 +11,8 @@ A simple demonstration of GitHub's public API.
 Usage
 -----
 
-First, make sure that After pulling down the repository and running `npm install`, run
+First, make sure that you have installed node and run `npm install` in the
+directory of the repository. To execute the demo, run
 
 ```
 node . <username>

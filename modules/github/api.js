@@ -1,7 +1,9 @@
+const config = require('config');
 const { request } = require('../http');
 
 function getUserEvents(user) {
-  const url = `https://api.github.com/users/${user}/events`;
+  const baseUrl = config.get('githubApiBaseUrl');
+  const url = `${baseUrl}/users/${user}/events`;
   return request(url, { json: true })
     .then(result => {
       if (result.response.statusCode >= 400) {

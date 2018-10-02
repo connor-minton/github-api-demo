@@ -1,0 +1,8 @@
+{
+  "eventWeights": {
+    "PushEvent": 4,
+    "PullRequestReviewCommentEvent": 3,
+    "ReleaseEvent": 2
+  },
+  "githubApiBaseUrl": "https://api.github.com"
+}

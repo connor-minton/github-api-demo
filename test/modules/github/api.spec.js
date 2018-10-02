@@ -1,6 +1,9 @@
 const nock = require('nock');
 const assert = require('assert');
+const config = require('config');
 const api = require('../../../modules/github/api');
+
+const githubUrl = config.get('githubApiBaseUrl');
 
 describe('github.api', () => {
   describe('.getUserEvents()', () => {
@@ -14,7 +17,7 @@ describe('github.api', () => {
         { type: 'ReleaseEvent' }
       ];
 
-      nock(/github/)
+      nock(githubUrl)
         .get('/users/connor/events')
         .reply(200, response);
 
@@ -27,7 +30,7 @@ describe('github.api', () => {
     it('should throw GitHub message when error response is received', () => {
       const response = { message: 'Not Found' };
 
-      nock(/github/)
+      nock(githubUrl)
         .get('/users/nonexistent/events')
         .reply(404, response);
 

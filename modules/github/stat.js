@@ -1,15 +1,12 @@
 const _ = require('lodash');
+const config = require('config');
 
 function userEventsAvg(userEvents) {
   if (userEvents.length === 0)
     throw Error('userEvents array is empty');
 
   const eventCounts = _.countBy(userEvents, 'type');
-  const eventWeights = {
-    PushEvent: 4,
-    PullRequestReviewCommentEvent: 3,
-    ReleaseEvent: 2
-  };
+  const eventWeights = config.get('eventWeights');
 
   const data = [];
   for (let eventType in eventCounts) {

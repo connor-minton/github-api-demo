@@ -1,11 +1,8 @@
 const assert = require('assert');
+const config = require('config');
 const stat = require('../../../modules/github/stat');
 
-const eventWeights = {
-  PushEvent: 4,
-  PullRequestReviewCommentEvent: 3,
-  ReleaseEvent: 2
-};
+const eventWeights = config.get('eventWeights');
 
 describe('github.stat', () => {
   describe('.userEventsAvg()', () => {
